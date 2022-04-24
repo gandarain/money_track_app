@@ -13,4 +13,5 @@
     <color name="redColor">#F55353</color>
     <color name="greenColor">#6BCB77</color>
     <color name="tabBackgroundColor">#EEE</color>
+    <color name="greyColor">#8D8DAA</color>
 </resources>
