@@ -12,4 +12,5 @@
     <color name="darkPurple">#5534A5</color>
     <color name="redColor">#F55353</color>
     <color name="greenColor">#6BCB77</color>
+    <color name="tabBackgroundColor">#EEE</color>
 </resources>
