@@ -10,4 +10,6 @@
     <color name="primaryColor">#4B7BE5</color>
     <color name="fontColor">#FFF9F9</color>
     <color name="darkPurple">#5534A5</color>
+    <color name="redColor">#F55353</color>
+    <color name="greenColor">#6BCB77</color>
 </resources>
