@@ -6,11 +6,14 @@
         <entry key="app/src/main/res/drawable/bg_button_primary.xml" value="0.1405" />
         <entry key="app/src/main/res/drawable/bg_profile_pic.xml" value="0.1405" />
         <entry key="app/src/main/res/drawable/bg_white_top_rounded.xml" value="0.1405" />
+        <entry key="app/src/main/res/drawable/bottom_buble.xml" value="0.1405" />
         <entry key="app/src/main/res/drawable/ic_baseline_cloud_download_24.xml" value="0.1405" />
         <entry key="app/src/main/res/drawable/ic_baseline_cloud_upload_24.xml" value="0.1405" />
         <entry key="app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.1405" />
         <entry key="app/src/main/res/drawable/tab_selector.xml" value="0.1405" />
+        <entry key="app/src/main/res/drawable/top_bubble.xml" value="0.1405" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.16495726495726495" />
         <entry key="app/src/main/res/layout/bg_profile_pic.xml" value="0.14175724637681159" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.14175724637681159" />
         <entry key="app/src/main/res/layout/fragment_income.xml" value="0.14175724637681159" />
