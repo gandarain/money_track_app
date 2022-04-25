@@ -11,7 +11,7 @@
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/tabLayout"/>
+        android:layout_above="@+id/tabLayout"/>
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
@@ -20,27 +20,29 @@
         app:tabMaxWidth="0dp"
         app:tabGravity="fill"
         app:tabMode="fixed"
+        android:background="@color/tabBackgroundColor"
         app:tabBackground="@drawable/tab_selector"
-        app:tabSelectedTextColor="@color/white"
         app:tabIndicatorColor="@color/primaryColor"
+        app:tabSelectedTextColor="@color/white"
         android:layout_alignParentBottom="true">
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:icon="@drawable/ic_baseline_home_24"
+            android:backgroundTint="@color/black"
             android:text="Home"/>
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:icon="@drawable/ic_baseline_cloud_upload_24"
+            android:icon="@drawable/ic_baseline_cloud_download_24"
             android:text="Income"/>
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:icon="@drawable/ic_baseline_cloud_download_24"
+            android:icon="@drawable/ic_baseline_cloud_upload_24"
             android:text="Outcome"/>
 
     </com.google.android.material.tabs.TabLayout>

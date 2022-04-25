@@ -68,7 +68,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvTitle"
             android:paddingHorizontal="20dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingBottom="20dp">
 
             <TextView
                 android:layout_width="match_parent"
@@ -133,7 +134,7 @@
                         android:layout_width="0dp"
                         android:layout_weight="0.4"
                         android:layout_height="wrap_content"
-                        android:text="+Rp 10.000,00"
+                        android:text="-Rp 10.000,00"
                         android:textColor="@color/redColor"
                         android:textSize="15dp"
                         android:textStyle="bold"/>
@@ -196,142 +197,7 @@
                         android:layout_width="0dp"
                         android:layout_weight="0.4"
                         android:layout_height="wrap_content"
-                        android:text="+Rp 10.000,00"
-                        android:textColor="@color/redColor"
-                        android:textSize="15dp"
-                        android:textStyle="bold"/>
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="10 November 2022"
-                android:textColor="@color/greyColor"
-                android:textStyle="bold"
-                android:textSize="15dp"
-                android:layout_marginVertical="10dp"/>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="5dp"
-                android:layout_marginVertical="10dp"
-                android:layout_marginHorizontal="5dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/llTitle"
-                app:cardBackgroundColor="@color/white">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:paddingHorizontal="10dp"
-                    android:paddingVertical="15dp"
-                    android:gravity="center_vertical">
-
-                    <ImageView
-                        android:layout_width="0dp"
-                        android:layout_weight="0.2"
-                        android:layout_height="30dp"
-                        android:src="@drawable/money_out"/>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_weight="0.5"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:text="Beli Makan"
-                            android:textColor="@color/black"
-                            android:textSize="15dp"
-                            android:textStyle="bold"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:text="10 November 2022"
-                            android:textColor="@color/greyColor"
-                            android:textSize="12dp"
-                            android:textStyle="bold"/>
-
-                    </LinearLayout>
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="0.4"
-                        android:layout_height="wrap_content"
-                        android:text="+Rp 10.000,00"
-                        android:textColor="@color/redColor"
-                        android:textSize="15dp"
-                        android:textStyle="bold"/>
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="5dp"
-                android:layout_marginVertical="10dp"
-                android:layout_marginHorizontal="5dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/llTitle"
-                app:cardBackgroundColor="@color/white">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:paddingHorizontal="10dp"
-                    android:paddingVertical="15dp"
-                    android:gravity="center_vertical">
-
-                    <ImageView
-                        android:layout_width="0dp"
-                        android:layout_weight="0.2"
-                        android:layout_height="30dp"
-                        android:src="@drawable/money_out"/>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_weight="0.5"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:text="Beli Makan"
-                            android:textColor="@color/black"
-                            android:textSize="15dp"
-                            android:textStyle="bold"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:text="10 November 2022"
-                            android:textColor="@color/greyColor"
-                            android:textSize="12dp"
-                            android:textStyle="bold"/>
-
-                    </LinearLayout>
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="0.4"
-                        android:layout_height="wrap_content"
-                        android:text="+Rp 10.000,00"
+                        android:text="-Rp 10.000,00"
                         android:textColor="@color/redColor"
                         android:textSize="15dp"
                         android:textStyle="bold"/>
@@ -403,7 +269,7 @@
                         android:layout_width="0dp"
                         android:layout_weight="0.4"
                         android:layout_height="wrap_content"
-                        android:text="+Rp 10.000,00"
+                        android:text="-Rp 10.000,00"
                         android:textColor="@color/redColor"
                         android:textSize="15dp"
                         android:textStyle="bold"/>
@@ -466,7 +332,7 @@
                         android:layout_width="0dp"
                         android:layout_weight="0.4"
                         android:layout_height="wrap_content"
-                        android:text="+Rp 10.000,00"
+                        android:text="-Rp 10.000,00"
                         android:textColor="@color/redColor"
                         android:textSize="15dp"
                         android:textStyle="bold"/>
@@ -538,7 +404,7 @@
                         android:layout_width="0dp"
                         android:layout_weight="0.4"
                         android:layout_height="wrap_content"
-                        android:text="+Rp 10.000,00"
+                        android:text="-Rp 10.000,00"
                         android:textColor="@color/redColor"
                         android:textSize="15dp"
                         android:textStyle="bold"/>
@@ -601,7 +467,142 @@
                         android:layout_width="0dp"
                         android:layout_weight="0.4"
                         android:layout_height="wrap_content"
-                        android:text="+Rp 10.000,00"
+                        android:text="-Rp 10.000,00"
+                        android:textColor="@color/redColor"
+                        android:textSize="15dp"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="10 November 2022"
+                android:textColor="@color/greyColor"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:layout_marginVertical="10dp"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp"
+                android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/llTitle"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="15dp"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.2"
+                        android:layout_height="30dp"
+                        android:src="@drawable/money_out"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="Beli Makan"
+                            android:textColor="@color/black"
+                            android:textSize="15dp"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="10 November 2022"
+                            android:textColor="@color/greyColor"
+                            android:textSize="12dp"
+                            android:textStyle="bold"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.4"
+                        android:layout_height="wrap_content"
+                        android:text="-Rp 10.000,00"
+                        android:textColor="@color/redColor"
+                        android:textSize="15dp"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp"
+                android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/llTitle"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="15dp"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.2"
+                        android:layout_height="30dp"
+                        android:src="@drawable/money_out"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="Beli Makan"
+                            android:textColor="@color/black"
+                            android:textSize="15dp"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="10 November 2022"
+                            android:textColor="@color/greyColor"
+                            android:textSize="12dp"
+                            android:textStyle="bold"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.4"
+                        android:layout_height="wrap_content"
+                        android:text="-Rp 10.000,00"
                         android:textColor="@color/redColor"
                         android:textSize="15dp"
                         android:textStyle="bold"/>
