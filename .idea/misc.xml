@@ -12,6 +12,7 @@
         <entry key="app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.1405" />
         <entry key="app/src/main/res/drawable/tab_selector.xml" value="0.1405" />
         <entry key="app/src/main/res/drawable/top_bubble.xml" value="0.1405" />
+        <entry key="app/src/main/res/layout/activity_create_screen.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_detail_screen.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.16495726495726495" />

@@ -1,5 +1,6 @@
 package com.example.moneytrack
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.moneytrack.databinding.ActivityDetailScreenBinding
@@ -13,6 +14,18 @@ class DetailScreenActivity : AppCompatActivity() {
         setContentView(binding?.root)
 
         setupToolbar()
+
+        btnEditHandler()
+    }
+
+    private fun btnEditHandler() {
+        binding?.btnEdit?.setOnClickListener {
+            val intent = Intent(
+                this@DetailScreenActivity,
+                CreateScreenActivity::class.java
+            )
+            startActivity(intent)
+        }
     }
 
     /**
