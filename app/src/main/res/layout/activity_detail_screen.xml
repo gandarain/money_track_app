@@ -50,6 +50,7 @@
                     android:textStyle="bold"/>
 
                 <TextView
+                    android:id="@+id/tvAmount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Rp 4.000.000,00"
@@ -66,6 +67,7 @@
                     android:layout_marginTop="20dp"/>
 
                 <TextView
+                    android:id="@+id/tvTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Beli Makan"
@@ -82,6 +84,7 @@
                     android:layout_marginTop="20dp"/>
 
                 <TextView
+                    android:id="@+id/tvDescription"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Beli Makan"
@@ -98,6 +101,7 @@
                     android:layout_marginTop="20dp"/>
 
                 <TextView
+                    android:id="@+id/tvDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="22 April 2022"
