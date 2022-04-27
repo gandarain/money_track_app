@@ -3,6 +3,7 @@ package com.example.moneytrack
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import com.example.moneytrack.databinding.ActivityCreateScreenBinding
 import java.text.SimpleDateFormat
@@ -64,11 +65,17 @@ class CreateScreenActivity : AppCompatActivity() {
             val title = binding?.etTitle?.text
             val description = binding?.etDescription?.text
             val amount = binding?.etAmount?.text
+            val type = intent.getStringExtra(Constant.TYPE)
             val date = generateDate()
 
             if (title.isNullOrEmpty() && description.isNullOrEmpty() && amount.isNullOrEmpty()) {
                 Toast.makeText(this, "Please fill all of the field!", Toast.LENGTH_SHORT).show()
             } else {
+                Log.e("Title", title.toString())
+                Log.e("description", description.toString())
+                Log.e("amount", amount.toString())
+                Log.e("type", type.toString())
+                Log.e("date", date)
                 Toast.makeText(this, "Success submit the data!", Toast.LENGTH_SHORT).show()
                 val intent = Intent(
                     this@CreateScreenActivity,
