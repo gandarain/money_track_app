@@ -1,10 +1,13 @@
 package com.example.moneytrack
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.constraintlayout.widget.ConstraintLayout
 
 class OutcomeFragment : Fragment() {
     override fun onCreateView(
@@ -12,6 +15,19 @@ class OutcomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_outcome, container, false)
+        val content = inflater.inflate(R.layout.fragment_outcome, container, false) as ConstraintLayout
+
+        btnNewOutcome(content)
+
+        return content
+    }
+
+    private fun btnNewOutcome(content: View) {
+        val btnNewOutcome: Button = content.findViewById(R.id.btnNewOutcome)
+        btnNewOutcome.setOnClickListener {
+            val intent = Intent(content.context, CreateScreenActivity::class.java)
+            intent.putExtra(Constant.TYPE, Constant.OUTCOME)
+            startActivity(intent)
+        }
     }
 }

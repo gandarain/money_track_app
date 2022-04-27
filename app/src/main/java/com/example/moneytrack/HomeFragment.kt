@@ -17,15 +17,26 @@ class HomeFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val content = inflater.inflate(R.layout.fragment_home, container, false) as ConstraintLayout
-        buttonDetailHandler(content)
+        btnNewOutcome(content)
+        btnNewIncome(content)
 
         return content
     }
 
-    private fun buttonDetailHandler(content: View) {
-        val btnDetailOutcome: CardView = content.findViewById(R.id.btnDetailOutcome)
-        btnDetailOutcome.setOnClickListener {
-            val intent = Intent(content.context, DetailScreenActivity::class.java)
+    private fun btnNewOutcome(content: View) {
+        val btnNewOutcome: CardView = content.findViewById(R.id.btnNewOutcome)
+        btnNewOutcome.setOnClickListener {
+            val intent = Intent(content.context, CreateScreenActivity::class.java)
+            intent.putExtra(Constant.TYPE, Constant.OUTCOME)
+            startActivity(intent)
+        }
+    }
+
+    private fun btnNewIncome(content: View) {
+        val btnNewIncome: CardView = content.findViewById(R.id.btnNewIncome)
+        btnNewIncome.setOnClickListener {
+            val intent = Intent(content.context, CreateScreenActivity::class.java)
+            intent.putExtra(Constant.TYPE, Constant.INCOME)
             startActivity(intent)
         }
     }
