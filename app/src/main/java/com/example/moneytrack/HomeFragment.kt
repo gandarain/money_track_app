@@ -9,6 +9,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 
 class HomeFragment : Fragment() {
     override fun onCreateView(
@@ -20,6 +23,8 @@ class HomeFragment : Fragment() {
         btnNewOutcome(content)
         btnNewIncome(content)
 
+        val exerciseHistoryDao = (activity?.applicationContext as CashFlowApp).db.cashFlowDao()
+        loadCashFlow(exerciseHistoryDao)
         return content
     }
 
@@ -38,6 +43,15 @@ class HomeFragment : Fragment() {
             val intent = Intent(content.context, CreateScreenActivity::class.java)
             intent.putExtra(Constant.TYPE, Constant.INCOME)
             startActivity(intent)
+        }
+    }
+
+    private fun loadCashFlow(cashFlowDao: CashFlowDao) {
+        lifecycleScope.launch {
+            cashFlowDao.fetchAllCashFlow().collect {
+                val cashFlowList = ArrayList(it)
+                Log.e("List ", cashFlowList.toString())
+            }
         }
     }
 }
