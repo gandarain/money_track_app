@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.lifecycle.lifecycleScope
 import com.example.moneytrack.databinding.ActivityCreateScreenBinding
+import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -17,21 +19,24 @@ class CreateScreenActivity : AppCompatActivity() {
         binding = ActivityCreateScreenBinding.inflate(layoutInflater)
         setContentView(binding?.root)
 
+        val cashFlowDao = (application as CashFlowApp).db.cashFlowDao()
+
         setupToolbar()
 
         setupInput()
 
-        onSubmit()
+        onSubmit(cashFlowDao)
     }
 
     private fun setupToolbar() {
+        val type = intent.getStringExtra(Constant.TYPE)
         // set the toolbar
         setSupportActionBar(binding?.toolBarCreate)
 
         // setup the back button
         if (supportActionBar != null) {
             supportActionBar?.setDisplayHomeAsUpEnabled(true)
-            supportActionBar?.title = "Create"
+            supportActionBar?.title = "Create ${if (type == Constant.INCOME) "Income" else "Outcome"}"
         }
         // on press back
         binding?.toolBarCreate?.setNavigationOnClickListener {
@@ -60,7 +65,7 @@ class CreateScreenActivity : AppCompatActivity() {
         return sdf.format(dateTime)
     }
 
-    private fun onSubmit() {
+    private fun onSubmit(cashFlowDao: CashFlowDao) {
         binding?.btnSubmit?.setOnClickListener {
             val title = binding?.etTitle?.text
             val description = binding?.etDescription?.text
@@ -71,12 +76,14 @@ class CreateScreenActivity : AppCompatActivity() {
             if (title.isNullOrEmpty() && description.isNullOrEmpty() && amount.isNullOrEmpty()) {
                 Toast.makeText(this, "Please fill all of the field!", Toast.LENGTH_SHORT).show()
             } else {
-                Log.e("Title", title.toString())
-                Log.e("description", description.toString())
-                Log.e("amount", amount.toString())
-                Log.e("type", type.toString())
-                Log.e("date", date)
-                Toast.makeText(this, "Success submit the data!", Toast.LENGTH_SHORT).show()
+                submitToDatabase(
+                    title.toString(),
+                    description.toString(),
+                    amount.toString(),
+                    type.toString(),
+                    date,
+                    cashFlowDao
+                )
                 val intent = Intent(
                     this@CreateScreenActivity,
                     MainActivity::class.java
@@ -85,5 +92,32 @@ class CreateScreenActivity : AppCompatActivity() {
                 finish()
             }
         }
+    }
+
+    private fun submitToDatabase(
+        title: String,
+        description: String,
+        amount: String,
+        type: String,
+        date: String,
+        cashFlowDao: CashFlowDao
+    ) {
+        lifecycleScope.launch {
+            cashFlowDao.insert(
+                CashFlowEntity(
+                    title = title,
+                    description = description,
+                    type = type,
+                    amount = amount,
+                    date = date,
+                )
+            )
+            Toast.makeText(this@CreateScreenActivity, "Record saved!", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        binding = null
     }
 }
