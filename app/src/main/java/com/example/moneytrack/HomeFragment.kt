@@ -7,9 +7,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
@@ -18,13 +21,12 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         val content = inflater.inflate(R.layout.fragment_home, container, false) as ConstraintLayout
         btnNewOutcome(content)
         btnNewIncome(content)
 
         val exerciseHistoryDao = (activity?.applicationContext as CashFlowApp).db.cashFlowDao()
-        loadCashFlow(exerciseHistoryDao)
+        loadCashFlow(exerciseHistoryDao, content)
         return content
     }
 
@@ -46,12 +48,32 @@ class HomeFragment : Fragment() {
         }
     }
 
-    private fun loadCashFlow(cashFlowDao: CashFlowDao) {
+    private fun loadCashFlow(cashFlowDao: CashFlowDao, content: View) {
         lifecycleScope.launch {
             cashFlowDao.fetchAllCashFlow().collect {
                 val cashFlowList = ArrayList(it)
-                Log.e("List ", cashFlowList.toString())
+                setupHistoryCashFlow(cashFlowList, cashFlowDao, content)
             }
+        }
+    }
+
+    private fun setupHistoryCashFlow(
+        cashFlowList: ArrayList<CashFlowEntity>,
+        cashFlowDao: CashFlowDao,
+        content: View
+    ) {
+        val cashFlowAdapter = CashFlowAdapter(cashFlowList)
+        val rvHistory: RecyclerView = content.findViewById(R.id.rvHistory)
+        val tvEmptyHistory: TextView = content.findViewById(R.id.tvEmptyHistory)
+
+        if (cashFlowList.isNotEmpty()) {
+            rvHistory.visibility = View.VISIBLE
+            tvEmptyHistory.visibility = View.GONE
+            rvHistory.adapter = cashFlowAdapter
+            rvHistory.layoutManager = LinearLayoutManager(content.context)
+        } else {
+            rvHistory.visibility = View.INVISIBLE
+            tvEmptyHistory.visibility = View.VISIBLE
         }
     }
 }
