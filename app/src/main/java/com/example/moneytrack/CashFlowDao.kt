@@ -20,4 +20,10 @@ interface CashFlowDao {
 
     @Query("SELECT * FROM `cash-flow-table` WHERE id=:id")
     fun fetchCashFlowById(id: Int): Flow<CashFlowEntity>
+
+    @Query("SELECT * FROM `cash-flow-table` WHERE type=:type")
+    fun fetchAllIncome(type: String): Flow<List<CashFlowEntity>>
+
+    @Query("SELECT * FROM `cash-flow-table` WHERE type=:type")
+    fun fetchAllOutcome(type: String): Flow<List<CashFlowEntity>>
 }

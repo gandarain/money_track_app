@@ -108,7 +108,7 @@ class CreateScreenActivity : AppCompatActivity() {
                     title = title,
                     description = description,
                     type = type,
-                    amount = amount,
+                    amount = amount.toInt(),
                     date = date,
                 )
             )
