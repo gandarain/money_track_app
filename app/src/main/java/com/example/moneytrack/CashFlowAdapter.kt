@@ -41,6 +41,7 @@ class CashFlowAdapter(
                     R.color.redColor
                 )
             )
+            holder.imageView.setImageResource(R.drawable.money_out)
         } else {
             holder.textViewAmount.text = "+ Rp ${cashFlow.amount}"
             holder.textViewAmount.setTextColor(
@@ -49,6 +50,7 @@ class CashFlowAdapter(
                     R.color.greenColor
                 )
             )
+            holder.imageView.setImageResource(R.drawable.money_in)
         }
     }
 

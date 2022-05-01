@@ -25,8 +25,8 @@ class HomeFragment : Fragment() {
         btnNewOutcome(content)
         btnNewIncome(content)
 
-        val exerciseHistoryDao = (activity?.applicationContext as CashFlowApp).db.cashFlowDao()
-        loadCashFlow(exerciseHistoryDao, content)
+        val cashFlowDao = (activity?.applicationContext as CashFlowApp).db.cashFlowDao()
+        loadCashFlow(cashFlowDao, content)
         return content
     }
 
