@@ -11,5 +11,5 @@ data class CashFlowEntity(
     val description: String = "",
     val type: String = "",
     val date: String = "",
-    val amount: String = ""
+    val amount: Int = 0
 )
