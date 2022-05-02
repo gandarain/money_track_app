@@ -11,6 +11,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.lifecycle.findViewTreeLifecycleOwner
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -28,6 +29,7 @@ class HomeFragment : Fragment() {
 
         val cashFlowDao = (activity?.applicationContext as CashFlowApp).db.cashFlowDao()
         loadCashFlow(cashFlowDao, content)
+        loadTotalTransaction(cashFlowDao, content)
         return content
     }
 
@@ -58,6 +60,15 @@ class HomeFragment : Fragment() {
         }
     }
 
+    private fun loadTotalTransaction(cashFlowDao: CashFlowDao, content: View) {
+        lifecycleScope.launch {
+            val totalIncome: Int = cashFlowDao.calculateIncome(Constant.INCOME)
+            val totalOutcome: Int = cashFlowDao.calculateIncome(Constant.OUTCOME)
+            Log.e("Total", totalIncome.toString())
+            setupTotalTransaction(totalIncome, totalOutcome, content)
+        }
+    }
+
     private fun setupHistoryCashFlow(
         cashFlowList: ArrayList<CashFlowEntity>,
         cashFlowDao: CashFlowDao,
@@ -76,5 +87,17 @@ class HomeFragment : Fragment() {
             rvHistory.visibility = View.INVISIBLE
             llEmptyHistory.visibility = View.VISIBLE
         }
+    }
+
+    private fun setupTotalTransaction(
+        totalIncome: Int,
+        totalOutcome: Int,
+        content: View
+    ) {
+        val tvIncomeTotal: TextView = content.findViewById(R.id.tvIncomeTotal)
+        val tvOutcomeTotal: TextView = content.findViewById(R.id.tvOutcomeTotal)
+
+        tvIncomeTotal.text = Utils.convertToRupiah(totalIncome)
+        tvOutcomeTotal.text = Utils.convertToRupiah(totalOutcome)
     }
 }
