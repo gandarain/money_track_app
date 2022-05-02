@@ -28,8 +28,8 @@ interface CashFlowDao {
     fun fetchAllOutcome(type: String): Flow<List<CashFlowEntity>>
 
     @Query("SELECT SUM(amount) as total FROM `cash-flow-table` WHERE type=:type")
-    fun calculateIncome(type: String): Int
+    suspend fun calculateIncome(type: String): Int?
 
     @Query("SELECT SUM(amount) as total FROM `cash-flow-table` WHERE type=:type")
-    fun calculateOutcome(type: String): Int
+    suspend fun calculateOutcome(type: String): Int?
 }

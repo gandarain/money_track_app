@@ -62,8 +62,8 @@ class HomeFragment : Fragment() {
 
     private fun loadTotalTransaction(cashFlowDao: CashFlowDao, content: View) {
         lifecycleScope.launch {
-            val totalIncome: Int = cashFlowDao.calculateIncome(Constant.INCOME)
-            val totalOutcome: Int = cashFlowDao.calculateIncome(Constant.OUTCOME)
+            val totalIncome: Int? = cashFlowDao.calculateIncome(Constant.INCOME)
+            val totalOutcome: Int? = cashFlowDao.calculateIncome(Constant.OUTCOME)
             Log.e("Total", totalIncome.toString())
             setupTotalTransaction(totalIncome, totalOutcome, content)
         }
@@ -90,14 +90,16 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupTotalTransaction(
-        totalIncome: Int,
-        totalOutcome: Int,
+        totalIncome: Int?,
+        totalOutcome: Int?,
         content: View
     ) {
         val tvIncomeTotal: TextView = content.findViewById(R.id.tvIncomeTotal)
         val tvOutcomeTotal: TextView = content.findViewById(R.id.tvOutcomeTotal)
+        val tvTotalCashflow: TextView = content.findViewById(R.id.tvTotalCashflow)
 
-        tvIncomeTotal.text = Utils.convertToRupiah(totalIncome)
-        tvOutcomeTotal.text = Utils.convertToRupiah(totalOutcome)
+        tvIncomeTotal.text =  Utils.convertToRupiah(totalIncome ?: 0)
+        tvOutcomeTotal.text = Utils.convertToRupiah(totalOutcome ?: 0)
+        tvTotalCashflow.text = Utils.convertToRupiah((totalIncome ?: 0) - (totalOutcome ?: 0))
     }
 }
