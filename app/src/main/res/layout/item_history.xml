@@ -18,7 +18,7 @@
         <ImageView
             android:id="@+id/ivImage"
             android:layout_width="0dp"
-            android:layout_weight="0.2"
+            android:layout_weight="0.1"
             android:layout_height="30dp"
             android:src="@drawable/money_out"/>
 
@@ -51,6 +51,7 @@
         </LinearLayout>
 
         <TextView
+            android:gravity="right"
             android:id="@+id/tvAmount"
             android:layout_width="0dp"
             android:layout_weight="0.4"

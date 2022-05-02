@@ -34,7 +34,7 @@ class CashFlowAdapter(
         holder.textViewDate.text = cashFlow.date
 
         if (cashFlow.type == Constant.OUTCOME) {
-            holder.textViewAmount.text = "- Rp ${cashFlow.amount}"
+            holder.textViewAmount.text = "- ${Utils.convertToRupiah(cashFlow.amount)}"
             holder.textViewAmount.setTextColor(
                 ContextCompat.getColor(
                     context,
@@ -43,7 +43,7 @@ class CashFlowAdapter(
             )
             holder.imageView.setImageResource(R.drawable.money_out)
         } else {
-            holder.textViewAmount.text = "+ Rp ${cashFlow.amount}"
+            holder.textViewAmount.text = "+ ${Utils.convertToRupiah(cashFlow.amount)}"
             holder.textViewAmount.setTextColor(
                 ContextCompat.getColor(
                     context,
