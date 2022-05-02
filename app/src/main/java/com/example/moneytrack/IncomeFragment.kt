@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.lifecycle.lifecycleScope
@@ -36,6 +37,13 @@ class IncomeFragment : Fragment() {
             intent.putExtra(Constant.TYPE, Constant.INCOME)
             startActivity(intent)
         }
+
+        val btnCreateNewIncome: Button = content.findViewById(R.id.btnCreateNewIncome)
+        btnCreateNewIncome.setOnClickListener {
+            val intent = Intent(content.context, CreateScreenActivity::class.java)
+            intent.putExtra(Constant.TYPE, Constant.INCOME)
+            startActivity(intent)
+        }
     }
 
     private fun loadIncomeHistory(cashFlowDao: CashFlowDao, content: View) {
@@ -54,16 +62,16 @@ class IncomeFragment : Fragment() {
     ) {
         val cashFlowAdapter = CashFlowAdapter(cashFlowList)
         val rvIncomeHistory: RecyclerView = content.findViewById(R.id.rvIncomeHistory)
-        val tvEmptyIncome: TextView = content.findViewById(R.id.tvEmptyIncome)
+        val llEmptyIncomeHistory: LinearLayout = content.findViewById(R.id.llEmptyIncomeHistory)
 
         if (cashFlowList.isNotEmpty()) {
             rvIncomeHistory.visibility = View.VISIBLE
-            tvEmptyIncome.visibility = View.GONE
+            llEmptyIncomeHistory.visibility = View.GONE
             rvIncomeHistory.adapter = cashFlowAdapter
             rvIncomeHistory.layoutManager = LinearLayoutManager(content.context)
         } else {
             rvIncomeHistory.visibility = View.INVISIBLE
-            tvEmptyIncome.visibility = View.VISIBLE
+            llEmptyIncomeHistory.visibility = View.VISIBLE
         }
     }
 }
