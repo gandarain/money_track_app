@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/bg_button_dark_purple.xml" value="0.1405" />
         <entry key="app/src/main/res/drawable/bg_button_primary.xml" value="0.1405" />
+        <entry key="app/src/main/res/drawable/bg_button_primary_color.xml" value="0.1405" />
         <entry key="app/src/main/res/drawable/bg_profile_pic.xml" value="0.1405" />
         <entry key="app/src/main/res/drawable/bg_white_top_rounded.xml" value="0.1405" />
         <entry key="app/src/main/res/drawable/bottom_buble.xml" value="0.1405" />

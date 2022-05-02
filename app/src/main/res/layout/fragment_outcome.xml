@@ -65,17 +65,59 @@
         tools:listitem="@layout/item_history"
         android:visibility="invisible"/>
 
-    <TextView
-        android:id="@+id/tvEmptyOutcome"
-        android:padding="20dp"
+    <LinearLayout
+        android:id="@+id/llEmptyOutcomeHistory"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="No Outcome History"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        android:gravity="center_horizontal"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.65"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/llTitle"/>
+        app:layout_constraintTop_toBottomOf="@+id/llTitle"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="visible">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/empty_money"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/llTitle" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No Outcome History"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center_horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivEmptyHistory"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="You don't have any outcome history"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:gravity="center_horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvEmptyIncomeTitle"/>
+
+        <Button
+            android:id="@+id/btnCreateNewOutcome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add New Outcome"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:background="@drawable/bg_button_primary_color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_margin="20dp"/>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

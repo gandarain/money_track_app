@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -64,16 +65,16 @@ class HomeFragment : Fragment() {
     ) {
         val cashFlowAdapter = CashFlowAdapter(cashFlowList)
         val rvHistory: RecyclerView = content.findViewById(R.id.rvHistory)
-        val tvEmptyHistory: TextView = content.findViewById(R.id.tvEmptyHistory)
+        val llEmptyHistory: LinearLayout = content.findViewById(R.id.llEmptyHistory)
 
         if (cashFlowList.isNotEmpty()) {
             rvHistory.visibility = View.VISIBLE
-            tvEmptyHistory.visibility = View.GONE
+            llEmptyHistory.visibility = View.GONE
             rvHistory.adapter = cashFlowAdapter
             rvHistory.layoutManager = LinearLayoutManager(content.context)
         } else {
             rvHistory.visibility = View.INVISIBLE
-            tvEmptyHistory.visibility = View.VISIBLE
+            llEmptyHistory.visibility = View.VISIBLE
         }
     }
 }

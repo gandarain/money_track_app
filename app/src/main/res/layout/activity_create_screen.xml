@@ -83,7 +83,7 @@
         android:textAllCaps="false"
         android:textSize="20dp"
         android:textStyle="bold"
-        android:background="@color/primaryColor"
+        android:background="@drawable/bg_button_primary_color"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:padding="20dp"
