@@ -32,4 +32,7 @@ interface CashFlowDao {
 
     @Query("SELECT SUM(amount) as total FROM `cash-flow-table` WHERE type=:type")
     suspend fun calculateOutcome(type: String): Int?
+
+    @Query("SELECT * FROM `cash-flow-table` LIMIT 3")
+    fun fetchRecentTransaction(): Flow<List<CashFlowEntity>>
 }

@@ -13,3 +13,14 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+*.jks
+*.keystore
+*.hprof
+
+# Android Studio generated files and folders
+captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+output.json
