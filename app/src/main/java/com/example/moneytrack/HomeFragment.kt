@@ -51,7 +51,7 @@ class HomeFragment : Fragment() {
 
     private fun loadCashFlow(cashFlowDao: CashFlowDao, content: View) {
         lifecycleScope.launch {
-            cashFlowDao.fetchAllCashFlow().collect {
+            cashFlowDao.fetchRecentTransaction().collect {
                 val cashFlowList = ArrayList(it)
                 setupHistoryCashFlow(cashFlowList, cashFlowDao, content)
             }
