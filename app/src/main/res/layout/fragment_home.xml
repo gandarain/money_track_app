@@ -83,7 +83,7 @@
                     android:layout_height="wrap_content"
                     android:text="Track your money"
                     android:textColor="@color/fontColor"
-                    android:textSize="20dp"
+                    android:textSize="20sp"
                     android:textStyle="bold"/>
 
                 <TextView
@@ -91,7 +91,7 @@
                     android:layout_height="wrap_content"
                     android:text="The easiest way to track your money, using this app"
                     android:textColor="@color/fontColor"
-                    android:textSize="15dp"
+                    android:textSize="15sp"
                     android:layout_marginTop="10dp"/>
 
             </LinearLayout>
@@ -162,7 +162,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:text="OUTCOME"
-                            android:textSize="15dp"
+                            android:textSize="15sp"
                             android:textColor="@color/black"
                             android:textStyle="bold"/>
 
@@ -197,7 +197,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:text="INCOME"
-                            android:textSize="15dp"
+                            android:textSize="15sp"
                             android:textColor="@color/black"
                             android:textStyle="bold"/>
 
@@ -226,7 +226,7 @@
                         android:layout_height="wrap_content"
                         android:text="Summary Transactions"
                         android:textColor="@color/white"
-                        android:textSize="20dp"
+                        android:textSize="20sp"
                         android:textStyle="bold"/>
 
                     <LinearLayout
@@ -283,7 +283,7 @@
                             android:textSize="20sp"
                             android:textStyle="bold"
                             android:text="Rp 10.000.00,00"
-                            android:gravity="right"/>
+                            android:gravity="end"/>
 
                     </LinearLayout>
 
@@ -303,7 +303,7 @@
                     android:layout_height="wrap_content"
                     android:text="Recent Transactions"
                     android:textColor="@color/black"
-                    android:textSize="20dp"
+                    android:textSize="20sp"
                     android:textStyle="bold"/>
 
             </LinearLayout>

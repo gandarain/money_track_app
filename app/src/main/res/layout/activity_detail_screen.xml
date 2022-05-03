@@ -46,7 +46,7 @@
                     android:layout_height="wrap_content"
                     android:text="Outcome"
                     android:textColor="@color/fontColor"
-                    android:textSize="20dp"
+                    android:textSize="20sp"
                     android:textStyle="bold"/>
 
                 <TextView
@@ -62,7 +62,7 @@
                     android:layout_height="wrap_content"
                     android:text="Title"
                     android:textColor="@color/fontColor"
-                    android:textSize="20dp"
+                    android:textSize="20sp"
                     android:textStyle="bold"
                     android:layout_marginTop="20dp"/>
 
@@ -79,7 +79,7 @@
                     android:layout_height="wrap_content"
                     android:text="Description"
                     android:textColor="@color/fontColor"
-                    android:textSize="20dp"
+                    android:textSize="20sp"
                     android:textStyle="bold"
                     android:layout_marginTop="20dp"/>
 
@@ -96,7 +96,7 @@
                     android:layout_height="wrap_content"
                     android:text="Date"
                     android:textColor="@color/fontColor"
-                    android:textSize="20dp"
+                    android:textSize="20sp"
                     android:textStyle="bold"
                     android:layout_marginTop="20dp"/>
 
@@ -135,7 +135,7 @@
             android:text="DELETE"
             android:textColor="@color/white"
             android:textAllCaps="false"
-            android:textSize="15dp"
+            android:textSize="15sp"
             android:textStyle="bold"
             android:background="@color/redColor"/>
 
@@ -152,7 +152,7 @@
             android:text="EDIT"
             android:textColor="@color/white"
             android:textAllCaps="false"
-            android:textSize="15dp"
+            android:textSize="15sp"
             android:textStyle="bold"
             android:background="@color/greenColor"/>
 
