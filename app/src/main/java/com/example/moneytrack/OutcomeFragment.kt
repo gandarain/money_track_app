@@ -27,6 +27,7 @@ class OutcomeFragment : Fragment() {
 
         val incomeHistory = (activity?.applicationContext as CashFlowApp).db.cashFlowDao()
         loadOutcomeHistory(incomeHistory, content)
+        loadTotalOutcome(incomeHistory, content)
 
         return content
     }
@@ -74,5 +75,20 @@ class OutcomeFragment : Fragment() {
             rvOutcomeHistory.visibility = View.INVISIBLE
             llEmptyOutcomeHistory.visibility = View.VISIBLE
         }
+    }
+
+    private fun loadTotalOutcome(cashFlowDao: CashFlowDao, content: View) {
+        lifecycleScope.launch {
+            val totalOutcome: Int? = cashFlowDao.calculateIncome(Constant.OUTCOME)
+            setupTotalOutcome(totalOutcome, content)
+        }
+    }
+
+    private fun setupTotalOutcome(
+        totalOutcome: Int?,
+        content: View
+    ) {
+        val tvTotalOutcome: TextView = content.findViewById(R.id.tvTotalOutcome)
+        tvTotalOutcome.text =  Utils.convertToRupiah(totalOutcome ?: 0)
     }
 }
