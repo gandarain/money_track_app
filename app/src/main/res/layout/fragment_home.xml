@@ -328,7 +328,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="No Outcome History"
+                    android:text="No Transaction History"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"
@@ -339,7 +339,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="You don't have any outcome history"
+                    android:text="You don't have any transaction history"
                     android:textColor="@color/black"
                     android:textSize="15sp"
                     android:gravity="center_horizontal"
