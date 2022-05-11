@@ -1,19 +1,23 @@
 package com.example.moneytrack
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moneytrack.databinding.ItemHistoryBinding
 
 class CashFlowAdapter(
-    private val cashFlowList: ArrayList<CashFlowEntity>
+    private val cashFlowList: ArrayList<CashFlowEntity>,
+    private val detailScreen: (id: Int) -> Unit
 ): RecyclerView.Adapter<CashFlowAdapter.MainViewHolder>() {
     inner class MainViewHolder(private val itemBinding: ItemHistoryBinding): RecyclerView.ViewHolder(itemBinding.root) {
         val imageView = itemBinding.ivImage
         val textViewTitle = itemBinding.tvTitle
         val textViewDate = itemBinding.tvDate
         val textViewAmount = itemBinding.tvAmount
+        val linerLayoutItemHistory = itemBinding.llItemHistory
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {
@@ -51,6 +55,10 @@ class CashFlowAdapter(
                 )
             )
             holder.imageView.setImageResource(R.drawable.money_in)
+        }
+
+        holder.linerLayoutItemHistory.setOnClickListener {
+            detailScreen.invoke(cashFlow.id)
         }
     }
 
