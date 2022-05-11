@@ -12,9 +12,9 @@ This application will help you to manage your income and outcome.Using Room Data
 - Create outcome/income
 - Calculate all the income/outcome
 - Show all the income/outcome history
+- Detail outcome/income
 
 ## Next Features
-- Detail outcome/income
 - Edit outcome/income
 - Delete outcome/income
 
