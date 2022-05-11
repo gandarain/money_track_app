@@ -9,4 +9,5 @@ object Constant {
     const val INCOME: String = "INCOME"
     const val OUTCOME: String = "OUTCOME"
     const val ID: String = "ID"
+    const val EMPTY_ID: Int = 0
 }
