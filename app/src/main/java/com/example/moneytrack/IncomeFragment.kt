@@ -61,7 +61,9 @@ class IncomeFragment : Fragment() {
         cashFlowDao: CashFlowDao,
         content: View
     ) {
-        val cashFlowAdapter = CashFlowAdapter(cashFlowList)
+        val cashFlowAdapter = CashFlowAdapter(cashFlowList) { id ->
+            navigateToDetailActivity(id, content)
+        }
         val rvIncomeHistory: RecyclerView = content.findViewById(R.id.rvIncomeHistory)
         val llEmptyIncomeHistory: LinearLayout = content.findViewById(R.id.llEmptyIncomeHistory)
 
@@ -89,5 +91,11 @@ class IncomeFragment : Fragment() {
     ) {
         val tvTotalIncome: TextView = content.findViewById(R.id.tvTotalIncome)
         tvTotalIncome.text =  Utils.convertToRupiah(totalIncome ?: 0)
+    }
+
+    private fun navigateToDetailActivity(id: Int, content: View) {
+        val intent = Intent(content.context, DetailScreenActivity::class.java)
+        intent.putExtra(Constant.ID, id)
+        startActivity(intent)
     }
 }
