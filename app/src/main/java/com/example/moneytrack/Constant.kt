@@ -8,4 +8,5 @@ object Constant {
     const val TYPE: String = "string"
     const val INCOME: String = "INCOME"
     const val OUTCOME: String = "OUTCOME"
+    const val ID: String = "ID"
 }
