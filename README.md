@@ -13,10 +13,11 @@ This application will help you to manage your income and outcome.Using Room Data
 - Calculate all the income/outcome
 - Show all the income/outcome history
 - Detail outcome/income
+- Delete outcome/income
 
 ## Next Features
 - Edit outcome/income
-- Delete outcome/income
+- Filter outcome/income by Date
 
 ## Resources
 All the icon is generated from flat icon (https://www.flaticon.com/).
