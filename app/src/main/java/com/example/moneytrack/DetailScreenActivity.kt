@@ -1,8 +1,10 @@
 package com.example.moneytrack
 
+import android.app.AlertDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import com.example.moneytrack.databinding.ActivityDetailScreenBinding
 import kotlinx.coroutines.flow.collect
@@ -35,15 +37,13 @@ class DetailScreenActivity : AppCompatActivity() {
     }
 
     private fun setupToolbar() {
-        // set the toolbar
         setSupportActionBar(binding?.tollBarDetail)
 
-        // setup the back button
         if (supportActionBar != null) {
             supportActionBar?.setDisplayHomeAsUpEnabled(true)
             supportActionBar?.title = "Detail"
         }
-        // on press back
+
         binding?.tollBarDetail?.setNavigationOnClickListener {
             onBackPressed()
         }
@@ -55,16 +55,55 @@ class DetailScreenActivity : AppCompatActivity() {
         if (id != Constant.EMPTY_ID) {
             lifecycleScope.launch {
                 cashFlowDao.fetchCashFlowById(id).collect {
-                    setupDetail(it)
+                    setupDetail(it, cashFlowDao)
                 }
             }
         }
     }
 
-    private fun setupDetail(detailItem: CashFlowEntity) {
+    private fun setupDetail(detailItem: CashFlowEntity, cashFlowDao: CashFlowDao) {
         binding?.tvDetailType?.text = detailItem.type
         binding?.tvDetailTitle?.text = detailItem.title
         binding?.tvDetailDescription?.text = detailItem.description
         binding?.tvDetailDate?.text = detailItem.date
+
+        setupButtonDelete(detailItem, cashFlowDao)
+    }
+
+    private fun setupButtonDelete(detailItem: CashFlowEntity, cashFlowDao: CashFlowDao) {
+        binding?.btnDeleteItem?.setOnClickListener {
+            deleteDialog(detailItem, cashFlowDao)
+        }
+    }
+
+    private fun deleteDialog(detailItem: CashFlowEntity, cashFlowDao: CashFlowDao) {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Delete Item")
+        builder.setMessage("Are you sure want to delete this item?")
+        builder.setPositiveButton("Yes"){ dialogInterface, _ ->
+            lifecycleScope.launch {
+                cashFlowDao.delete(detailItem)
+                Toast.makeText(this@DetailScreenActivity, "Item deleted!", Toast.LENGTH_SHORT).show()
+                dialogInterface.dismiss()
+                val intent = Intent(
+                    this@DetailScreenActivity,
+                    MainActivity::class.java
+                )
+                startActivity(intent)
+                finish()
+            }
+        }
+        builder.setNegativeButton("No"){ dialogInterface, _ ->
+            dialogInterface.dismiss()
+        }
+
+        val alertDialog: AlertDialog = builder.create()
+        alertDialog.setCancelable(false)
+        alertDialog.show()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        binding = null
     }
 }

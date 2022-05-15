@@ -129,7 +129,7 @@
         android:layout_margin="20dp">
 
         <Button
-            android:id="@+id/btnDelete"
+            android:id="@+id/btnDeleteItem"
             android:layout_width="0dp"
             android:layout_weight="0.45"
             android:layout_height="wrap_content"
