@@ -138,7 +138,9 @@
             android:textAllCaps="false"
             android:textSize="15sp"
             android:textStyle="bold"
-            android:background="@color/redColor"/>
+            android:background="@color/redColor"
+            android:drawableStart="@drawable/ic_white_delete"
+            android:padding="15dp"/>
 
         <View
             android:layout_width="0dp"
@@ -155,7 +157,9 @@
             android:textAllCaps="false"
             android:textSize="15sp"
             android:textStyle="bold"
-            android:background="@color/greenColor"/>
+            android:background="@color/greenColor"
+            android:drawableStart="@drawable/ic_white_edit"
+            android:padding="15dp"/>
 
     </LinearLayout>
 
