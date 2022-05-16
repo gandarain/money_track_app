@@ -18,6 +18,7 @@ This application will help you to manage your income and outcome. Using Room Dat
 - Loader when fetching or submit data
 
 ## Next Features
+- Pie Chart
 - Filter outcome/income by Date
 
 ## Bugs
@@ -25,6 +26,9 @@ This application will help you to manage your income and outcome. Using Room Dat
 
 ## Resources
 All the icon is generated from flat icon (https://www.flaticon.com/).
+
+Pie Chart example<br/>
+https://intensecoder.com/piechart-tutorial-using-mpandroidchart-in-kotlin/
 
 Grab the APK from this link below,
 https://drive.google.com/file/d/1wyHIlAQ0sO2E5PtBiwBrlFZF_dGV2mnk/view?usp=sharing
