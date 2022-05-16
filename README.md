@@ -30,7 +30,7 @@ All the icon is generated from flat icon (https://www.flaticon.com/).
 Pie Chart example<br/>
 https://intensecoder.com/piechart-tutorial-using-mpandroidchart-in-kotlin/
 
-Grab the APK from this link below,
+Grab the APK from this link below,<br/>
 https://drive.google.com/file/d/1wyHIlAQ0sO2E5PtBiwBrlFZF_dGV2mnk/view?usp=sharing
 
 ## Screenshots
