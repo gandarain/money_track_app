@@ -138,7 +138,7 @@
             android:textAllCaps="false"
             android:textSize="15sp"
             android:textStyle="bold"
-            android:background="@color/redColor"
+            android:background="@drawable/bg_button_red"
             android:drawableStart="@drawable/ic_white_delete"
             android:padding="15dp"/>
 
@@ -157,7 +157,7 @@
             android:textAllCaps="false"
             android:textSize="15sp"
             android:textStyle="bold"
-            android:background="@color/greenColor"
+            android:background="@drawable/bg_button_green"
             android:drawableStart="@drawable/ic_white_edit"
             android:padding="15dp"/>
 
