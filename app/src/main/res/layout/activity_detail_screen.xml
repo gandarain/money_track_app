@@ -148,7 +148,7 @@
             android:layout_height="match_parent"/>
 
         <Button
-            android:id="@+id/btnEdit"
+            android:id="@+id/btnEditItem"
             android:layout_width="0dp"
             android:layout_weight="0.45"
             android:layout_height="wrap_content"

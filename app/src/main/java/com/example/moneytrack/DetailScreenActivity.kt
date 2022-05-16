@@ -22,18 +22,6 @@ class DetailScreenActivity : AppCompatActivity() {
         loadCashFlowDetail(cashFlowDao)
 
         setupToolbar()
-
-        btnEditHandler()
-    }
-
-    private fun btnEditHandler() {
-        binding?.btnEdit?.setOnClickListener {
-            val intent = Intent(
-                this@DetailScreenActivity,
-                CreateScreenActivity::class.java
-            )
-            startActivity(intent)
-        }
     }
 
     private fun setupToolbar() {
@@ -68,6 +56,7 @@ class DetailScreenActivity : AppCompatActivity() {
         binding?.tvDetailDate?.text = detailItem.date
 
         setupButtonDelete(detailItem, cashFlowDao)
+        setupEditButton(detailItem)
     }
 
     private fun setupButtonDelete(detailItem: CashFlowEntity, cashFlowDao: CashFlowDao) {
@@ -100,6 +89,22 @@ class DetailScreenActivity : AppCompatActivity() {
         val alertDialog: AlertDialog = builder.create()
         alertDialog.setCancelable(false)
         alertDialog.show()
+    }
+
+    private fun setupEditButton(detailItem: CashFlowEntity) {
+        binding?.btnEditItem?.setOnClickListener {
+            val intent = Intent(
+                this@DetailScreenActivity,
+                CreateScreenActivity::class.java
+            )
+            intent.putExtra(Constant.ID, detailItem.id)
+            intent.putExtra(Constant.TYPE, detailItem.type)
+            intent.putExtra(Constant.TITLE, detailItem.title)
+            intent.putExtra(Constant.DESCRIPTION, detailItem.description)
+            intent.putExtra(Constant.AMOUNT, detailItem.amount.toString())
+            intent.putExtra(Constant.DATE, detailItem.date)
+            startActivity(intent)
+        }
     }
 
     override fun onDestroy() {
