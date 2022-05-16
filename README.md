@@ -15,10 +15,13 @@ This application will help you to manage your income and outcome. Using Room Dat
 - Detail outcome/income
 - Delete outcome/income
 - Edit outcome/income
+- Loader when fetching or submit data
 
 ## Next Features
-- Loader when fetching or submit data
 - Filter outcome/income by Date
+
+## Bugs
+- Sometimes app will force close when delete the cashflow item
 
 ## Resources
 All the icon is generated from flat icon (https://www.flaticon.com/).
