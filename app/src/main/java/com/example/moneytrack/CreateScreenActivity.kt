@@ -3,7 +3,6 @@ package com.example.moneytrack
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import com.example.moneytrack.databinding.ActivityCreateScreenBinding
@@ -30,15 +29,13 @@ class CreateScreenActivity : AppCompatActivity() {
 
     private fun setupToolbar() {
         val type = intent.getStringExtra(Constant.TYPE)
-        // set the toolbar
         setSupportActionBar(binding?.toolBarCreate)
 
-        // setup the back button
         if (supportActionBar != null) {
             supportActionBar?.setDisplayHomeAsUpEnabled(true)
             supportActionBar?.title = "Create ${if (type == Constant.INCOME) "Income" else "Outcome"}"
         }
-        // on press back
+
         binding?.toolBarCreate?.setNavigationOnClickListener {
             onBackPressed()
         }
@@ -76,20 +73,28 @@ class CreateScreenActivity : AppCompatActivity() {
             if (title.isNullOrEmpty() && description.isNullOrEmpty() && amount.isNullOrEmpty()) {
                 Toast.makeText(this, "Please fill all of the field!", Toast.LENGTH_SHORT).show()
             } else {
-                submitToDatabase(
-                    title.toString(),
-                    description.toString(),
-                    amount.toString(),
-                    type.toString(),
-                    date,
-                    cashFlowDao
-                )
-                val intent = Intent(
-                    this@CreateScreenActivity,
-                    MainActivity::class.java
-                )
-                startActivity(intent)
-                finish()
+                val isEdit: Boolean = intent.getBooleanExtra(Constant.IS_EDIT, false)
+                val id: String? = intent.getStringExtra(Constant.ID)
+                if (isEdit) {
+                    editCashFlow(
+                        id.toString(),
+                        title.toString(),
+                        description.toString(),
+                        amount.toString(),
+                        type.toString(),
+                        date,
+                        cashFlowDao
+                    )
+                } else {
+                    submitToDatabase(
+                        title.toString(),
+                        description.toString(),
+                        amount.toString(),
+                        type.toString(),
+                        date,
+                        cashFlowDao
+                    )
+                }
             }
         }
     }
@@ -112,7 +117,38 @@ class CreateScreenActivity : AppCompatActivity() {
                     date = date,
                 )
             )
-            Toast.makeText(this@CreateScreenActivity, "Record saved!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@CreateScreenActivity, "Record Created!", Toast.LENGTH_SHORT).show()
+            val intent = Intent(
+                this@CreateScreenActivity,
+                MainActivity::class.java
+            )
+            startActivity(intent)
+            finish()
+        }
+    }
+
+    private fun editCashFlow(
+        id: String,
+        title: String,
+        description: String,
+        amount: String,
+        type: String,
+        date: String,
+        cashFlowDao: CashFlowDao
+    ) {
+        lifecycleScope.launch {
+            cashFlowDao.update(
+                CashFlowEntity(
+                    id = id.toInt(),
+                    title = title,
+                    description = description,
+                    type = type,
+                    amount = amount.toInt(),
+                    date = date,
+                )
+            )
+            Toast.makeText(this@CreateScreenActivity, "Record Updated!", Toast.LENGTH_SHORT).show()
+            finish()
         }
     }
 

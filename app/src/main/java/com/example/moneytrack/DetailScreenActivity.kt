@@ -50,6 +50,7 @@ class DetailScreenActivity : AppCompatActivity() {
     }
 
     private fun setupDetail(detailItem: CashFlowEntity, cashFlowDao: CashFlowDao) {
+        binding?.tvDetailAmount?.text = Utils.convertToRupiah(detailItem.amount ?: 0)
         binding?.tvDetailType?.text = detailItem.type
         binding?.tvDetailTitle?.text = detailItem.title
         binding?.tvDetailDescription?.text = detailItem.description
@@ -97,12 +98,13 @@ class DetailScreenActivity : AppCompatActivity() {
                 this@DetailScreenActivity,
                 CreateScreenActivity::class.java
             )
-            intent.putExtra(Constant.ID, detailItem.id)
+            intent.putExtra(Constant.ID, detailItem.id.toString())
             intent.putExtra(Constant.TYPE, detailItem.type)
             intent.putExtra(Constant.TITLE, detailItem.title)
             intent.putExtra(Constant.DESCRIPTION, detailItem.description)
             intent.putExtra(Constant.AMOUNT, detailItem.amount.toString())
             intent.putExtra(Constant.DATE, detailItem.date)
+            intent.putExtra(Constant.IS_EDIT, true)
             startActivity(intent)
         }
     }
