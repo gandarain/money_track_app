@@ -1,5 +1,6 @@
 package com.example.moneytrack
 
+import android.app.Dialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,6 +13,7 @@ import java.util.*
 
 class CreateScreenActivity : AppCompatActivity() {
     private var binding: ActivityCreateScreenBinding? = null
+    private var mProgressDialog: Dialog? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -64,6 +66,7 @@ class CreateScreenActivity : AppCompatActivity() {
 
     private fun onSubmit(cashFlowDao: CashFlowDao) {
         binding?.btnSubmit?.setOnClickListener {
+            showCustomProgressDialog()
             val title = binding?.etTitle?.text
             val description = binding?.etDescription?.text
             val amount = binding?.etAmount?.text
@@ -118,6 +121,7 @@ class CreateScreenActivity : AppCompatActivity() {
                 )
             )
             Toast.makeText(this@CreateScreenActivity, "Record Created!", Toast.LENGTH_SHORT).show()
+            hideProgressDialog()
             val intent = Intent(
                 this@CreateScreenActivity,
                 MainActivity::class.java
@@ -148,7 +152,20 @@ class CreateScreenActivity : AppCompatActivity() {
                 )
             )
             Toast.makeText(this@CreateScreenActivity, "Record Updated!", Toast.LENGTH_SHORT).show()
+            hideProgressDialog()
             finish()
+        }
+    }
+
+    private fun showCustomProgressDialog() {
+        mProgressDialog = Dialog(this)
+        mProgressDialog!!.setContentView(R.layout.loader)
+        mProgressDialog!!.show()
+    }
+
+    private fun hideProgressDialog() {
+        if (mProgressDialog != null) {
+            mProgressDialog!!.dismiss()
         }
     }
 
