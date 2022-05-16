@@ -100,11 +100,23 @@ class HomeFragment : Fragment() {
         tvIncomeTotal.text =  Utils.convertToRupiah(totalIncome ?: 0)
         tvOutcomeTotal.text = Utils.convertToRupiah(totalOutcome ?: 0)
         tvTotalCashflow.text = Utils.convertToRupiah((totalIncome ?: 0) - (totalOutcome ?: 0))
+
+        setupCardViewSummaryTransaction(content, totalIncome?: 0, totalOutcome?: 0)
     }
 
     private fun navigateToDetailActivity(id: Int, content: View) {
         val intent = Intent(content.context, DetailScreenActivity::class.java)
         intent.putExtra(Constant.ID, id)
         startActivity(intent)
+    }
+
+    private fun setupCardViewSummaryTransaction(content: View, totalIncome: Int, totalOutcome: Int) {
+        val cvSummaryTransaction: CardView? = content.findViewById(R.id.cvSummaryTransaction)
+        cvSummaryTransaction?.setOnClickListener {
+            val intent = Intent(content.context, SummaryActivity::class.java)
+            intent.putExtra(Constant.INCOME, totalIncome)
+            intent.putExtra(Constant.OUTCOME, totalOutcome)
+            startActivity(intent)
+        }
     }
 }

@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MoneyTrack">
         <activity
+            android:name=".SummaryActivity"
+            android:exported="false" />
+        <activity
             android:name=".CreateScreenActivity"
             android:exported="false" />
         <activity
