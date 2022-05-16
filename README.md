@@ -1,7 +1,7 @@
 # Moneytory App
 
 ## Introduction
-This application will help you to manage your income and outcome.Using Room Database to store all the income/outcome data, so you don't need internet connection to using this application, but if you clear the cache or data of this application, all you income/outcome will be gone.
+This application will help you to manage your income and outcome. Using Room Database to store all the income/outcome data, so you don't need internet connection to using this application, but if you clear the cache or data of this application, all you income/outcome will be gone.
 
 ## Technology
 - Kotlin
@@ -14,9 +14,10 @@ This application will help you to manage your income and outcome.Using Room Data
 - Show all the income/outcome history
 - Detail outcome/income
 - Delete outcome/income
+- Edit outcome/income
 
 ## Next Features
-- Edit outcome/income
+- Loader when fetching or submit data
 - Filter outcome/income by Date
 
 ## Resources
