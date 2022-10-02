@@ -31,7 +31,7 @@ Pie Chart example<br/>
 https://intensecoder.com/piechart-tutorial-using-mpandroidchart-in-kotlin/
 
 Grab the APK from this link below,<br/>
-https://drive.google.com/file/d/1wyHIlAQ0sO2E5PtBiwBrlFZF_dGV2mnk/view?usp=sharing
+https://github.com/gandarain/money_track_app/releases/tag/1
 
 ## Screenshots
 Screenshot            |  Screenshot
