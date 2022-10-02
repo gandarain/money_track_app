@@ -16,9 +16,9 @@ This application will help you to manage your income and outcome. Using Room Dat
 - Delete outcome/income
 - Edit outcome/income
 - Loader when fetching or submit data
+- Pie Chart for summary transaction
 
 ## Next Features
-- Pie Chart
 - Filter outcome/income by Date
 
 ## Bugs
@@ -39,3 +39,4 @@ Screenshot            |  Screenshot
 ![Screenshot_2022-05-02-22-10-01-012_com example moneytrack](https://user-images.githubusercontent.com/27923352/166406689-446e35da-b45b-4bfa-9b69-b7d2d7c068b2.jpg)  |  ![Screenshot_2022-05-02-22-09-22-085_com example moneytrack](https://user-images.githubusercontent.com/27923352/166406834-e171a279-cace-43e3-8595-8753c97fc9db.jpg)
 ![Screenshot_2022-05-02-22-09-17-823_com example moneytrack](https://user-images.githubusercontent.com/27923352/166406969-2b727e3b-6367-4e84-8a63-414ad2ceec0d.jpg) | ![Screenshot_2022-05-02-22-09-15-744_com example moneytrack](https://user-images.githubusercontent.com/27923352/166406978-2dc48970-c117-4905-8489-c1c827eda674.jpg)
 ![Screenshot_2022-05-02-22-09-13-045_com example moneytrack](https://user-images.githubusercontent.com/27923352/166407002-ee0f625e-bdd1-4018-8920-0aec14a74991.jpg) | ![Screenshot_2022-05-15-14-22-09-966_com example moneytrack](https://user-images.githubusercontent.com/27923352/168462074-9cf740d6-949a-4ef7-87cd-7bc63687d082.jpg)
+![Screenshot_2022-05-16-20-18-00-190_com example moneytrack](https://user-images.githubusercontent.com/27923352/168602420-c9f3148a-5634-4302-916b-f7fcd8df90fd.jpg)
